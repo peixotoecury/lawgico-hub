@@ -3,253 +3,233 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>LAWgico Hub — Peixoto &amp; Cury Advogados</title>
+<title>LAWgico — Sistemas Ativos · Peixoto &amp; Cury Advogados</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=DM+Mono:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
 
 :root{
-  --navy:   #002236;
-  --navy2:  #003B5C;
-  --navy3:  #004E7C;
-  --cyan:   #00AEEF;
-  --cyan2:  #1ae3ff;
-  --teal:   #006080;
-  --white:  #FFFFFF;
-  --off:    #F4FAFD;
-  --text:   #E8F4FA;
-  --muted:  #7EB8D4;
-  --border: rgba(0,174,239,.18);
-  --card:   rgba(255,255,255,.04);
-  --card-h: rgba(255,255,255,.07);
-  --green:  #00C896;
-  --amber:  #F59E0B;
-  --purple: #A78BFA;
-  --red:    #F87171;
-  --shadow: 0 8px 32px rgba(0,0,0,.35);
+  --navy:  #001e36;
+  --navy2: #002d4d;
+  --navy3: #003B5C;
+  --cyan:  #00AEEF;
+  --teal:  #006080;
+  --white: #FFFFFF;
+  --text:  #E8F4FA;
+  --muted: #7EB8D4;
+  --border:rgba(0,174,239,.18);
+  --green: #00C896;
+  --shadow:0 12px 40px rgba(0,0,0,.4);
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:'Inter',sans-serif;background:var(--navy);color:var(--text);min-height:100vh;overflow-x:hidden;}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--navy);
+  color:var(--text);
+  min-height:100vh;
+  overflow-x:hidden;
+}
 
 body::before{
   content:'';position:fixed;inset:0;z-index:0;
   background:
-    radial-gradient(ellipse 80% 60% at 10% 0%,  rgba(0,174,239,.10) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at 90% 100%, rgba(0,96,128,.15)  0%, transparent 55%),
-    radial-gradient(ellipse 40% 40% at 50% 50%,  rgba(0,34,54,.80)   0%, transparent 100%);
+    radial-gradient(ellipse 70% 50% at 15% 0%,  rgba(0,174,239,.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 85% 100%, rgba(0,96,128,.18)  0%, transparent 55%);
   pointer-events:none;
 }
 
-/* ── HEADER ───────────────────────────────────────────────── */
+/* ── HEADER ── */
 .header{
   position:relative;z-index:10;
-  padding:24px 60px;
+  padding:28px 64px;
   border-bottom:1px solid var(--border);
-  background:rgba(0,34,54,.7);
-  backdrop-filter:blur(12px);
+  background:rgba(0,30,54,.75);
+  backdrop-filter:blur(16px);
   display:flex;align-items:center;justify-content:space-between;
   gap:24px;
 }
-.logo-area{display:flex;align-items:center;gap:0;}
-.logo-brand{display:flex;flex-direction:column;gap:0;}
-.logo-wordmark{display:flex;align-items:flex-end;line-height:1;}
-.logo-law{font-size:46px;font-weight:900;color:#fff;letter-spacing:-2px;font-family:'Inter',sans-serif;}
-.logo-gico-wrap{display:flex;flex-direction:column;align-items:flex-start;}
-.logo-feat{font-size:10px;font-weight:400;color:#fff;letter-spacing:1px;align-self:flex-end;margin-bottom:-1px;opacity:.85;}
-.logo-gico{font-size:46px;font-weight:300;color:#fff;letter-spacing:-2px;line-height:1;font-family:'Inter',sans-serif;}
-.logo-tagline{font-size:9px;color:rgba(255,255,255,.75);letter-spacing:3px;font-weight:400;margin-top:2px;}
+.logo-wordmark{display:flex;align-items:flex-end;line-height:1;margin-bottom:2px;}
+.logo-law{font-size:44px;font-weight:900;color:#fff;letter-spacing:-2px;}
+.logo-gico-col{display:flex;flex-direction:column;align-items:flex-start;}
+.logo-module{font-size:10px;font-weight:400;color:rgba(255,255,255,.8);letter-spacing:1px;align-self:flex-end;margin-bottom:-1px;}
+.logo-gico{font-size:44px;font-weight:300;color:#fff;letter-spacing:-2px;line-height:1;}
+.logo-tagline{font-size:9px;color:rgba(255,255,255,.75);letter-spacing:3px;font-weight:400;margin-top:3px;}
 .header-right{text-align:right;}
-.firm-name{font-size:13px;font-weight:600;color:var(--white);opacity:.85;}
+.firm-name{font-size:13px;font-weight:600;color:#fff;opacity:.85;}
 .firm-sub{font-size:11px;color:var(--muted);margin-top:3px;}
-.date-badge{
-  display:inline-block;margin-top:10px;
-  background:rgba(0,174,239,.15);border:1px solid var(--border);
-  color:var(--cyan);font-size:11px;font-weight:600;
-  padding:4px 14px;border-radius:20px;letter-spacing:.5px;
-}
 
-/* ── HERO ─────────────────────────────────────────────────── */
+/* ── HERO ── */
 .hero{
   position:relative;z-index:5;
-  padding:60px 60px 44px;
+  padding:64px 64px 48px;
   text-align:center;
 }
-.hero-badge{
+.hero-eyebrow{
   display:inline-flex;align-items:center;gap:8px;
-  background:rgba(0,174,239,.12);border:1px solid rgba(0,174,239,.3);
-  color:var(--cyan);font-size:11px;font-weight:700;
-  padding:6px 18px;border-radius:20px;letter-spacing:1px;
-  text-transform:uppercase;margin-bottom:24px;
+  background:rgba(0,200,150,.1);border:1px solid rgba(0,200,150,.3);
+  color:var(--green);font-size:11px;font-weight:700;
+  padding:5px 16px;border-radius:20px;letter-spacing:1.2px;
+  text-transform:uppercase;margin-bottom:22px;
 }
-.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--cyan);animation:pulse 2s infinite;}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
-.hero-title{font-size:48px;font-weight:900;color:#fff;line-height:1.1;margin-bottom:16px;letter-spacing:-1px;}
+.hero-eyebrow::before{
+  content:'';width:6px;height:6px;border-radius:50%;
+  background:var(--green);animation:pulse 2s infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.5)}}
+.hero-title{font-size:46px;font-weight:900;color:#fff;line-height:1.1;letter-spacing:-1.5px;margin-bottom:14px;}
 .hero-title span{
   background:linear-gradient(90deg,var(--cyan),#60d8ff);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 }
-.hero-desc{font-size:16px;color:var(--muted);max-width:600px;margin:0 auto 40px;line-height:1.6;}
+.hero-desc{font-size:15px;color:var(--muted);max-width:560px;margin:0 auto;line-height:1.7;}
 
-/* ── STATS ────────────────────────────────────────────────── */
-.stats{
-  display:flex;align-items:center;justify-content:center;gap:0;
-  background:rgba(255,255,255,.04);border:1px solid var(--border);
-  border-radius:16px;max-width:780px;margin:0 auto;overflow:hidden;
-}
-.stat{flex:1;padding:20px 20px;text-align:center;border-right:1px solid var(--border);}
-.stat:last-child{border-right:none;}
-.stat-num{font-size:32px;font-weight:900;color:#fff;font-family:'DM Mono',monospace;line-height:1;}
-.stat-num.cyan  {color:var(--cyan);}
-.stat-num.green {color:var(--green);}
-.stat-num.amber {color:var(--amber);}
-.stat-num.purple{color:var(--purple);}
-.stat-num.blue  {color:#60B4FF;}
-.stat-lbl{font-size:10px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-top:6px;}
-
-/* ── FILTROS ──────────────────────────────────────────────── */
-.filter-bar{
+/* ── GRID ── */
+.grid-section{
   position:relative;z-index:5;
-  padding:0 60px 32px;
-  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  padding:48px 64px 64px;
 }
-.filter-btn{
-  background:var(--card);border:1px solid var(--border);
-  color:var(--muted);font-size:12px;font-weight:600;
-  padding:8px 18px;border-radius:20px;cursor:pointer;
-  transition:all .2s;font-family:'Inter',sans-serif;
-  letter-spacing:.3px;
+.cards-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(340px,1fr));
+  gap:20px;
+  max-width:1200px;
+  margin:0 auto;
 }
-.filter-btn:hover,.filter-btn.active{
-  background:rgba(0,174,239,.15);border-color:var(--cyan);color:var(--cyan);
-}
-.filter-btn.active-soon{
-  background:rgba(96,180,255,.12);border-color:rgba(96,180,255,.4);color:#60B4FF;
-}
-.search-wrap{margin-left:auto;position:relative;}
-.search-input{
-  background:var(--card);border:1px solid var(--border);
-  color:var(--white);font-size:12px;font-family:'Inter',sans-serif;
-  padding:8px 16px 8px 36px;border-radius:20px;width:220px;outline:none;
-  transition:border-color .2s;
-}
-.search-input::placeholder{color:var(--muted);}
-.search-input:focus{border-color:var(--cyan);}
-.search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:13px;pointer-events:none;}
 
-/* ── SEÇÕES ───────────────────────────────────────────────── */
-.section{position:relative;z-index:5;padding:0 60px 52px;}
-.sec-header{display:flex;align-items:center;gap:16px;margin-bottom:24px;}
-.sec-line{flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent);}
-.sec-title{font-size:11px;font-weight:700;color:var(--cyan);text-transform:uppercase;letter-spacing:2px;white-space:nowrap;}
-.sec-count{font-size:11px;color:var(--muted);font-family:'DM Mono',monospace;}
-
-/* ── GRID DE CARDS ────────────────────────────────────────── */
-.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:16px;}
-
-/* ── TOOL CARD ────────────────────────────────────────────── */
+/* ── CARD ── */
 .tool-card{
-  background:var(--card);border:1px solid var(--border);border-radius:16px;
-  padding:0;transition:all .25s;cursor:default;
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--border);
+  border-radius:20px;
   display:flex;flex-direction:column;
-  position:relative;overflow:hidden;
+  overflow:hidden;
+  transition:all .25s;
+  position:relative;
 }
 .tool-card::before{
   content:'';position:absolute;top:0;left:0;right:0;height:1px;
   background:linear-gradient(90deg,transparent,var(--cyan),transparent);
   opacity:0;transition:opacity .3s;
 }
-.tool-card:hover{background:var(--card-h);border-color:rgba(0,174,239,.4);transform:translateY(-2px);box-shadow:var(--shadow);}
+.tool-card:hover{
+  background:rgba(255,255,255,.07);
+  border-color:rgba(0,174,239,.45);
+  transform:translateY(-3px);
+  box-shadow:var(--shadow);
+}
 .tool-card:hover::before{opacity:1;}
-.tool-card.soon-card{opacity:.65;}
-.tool-card.soon-card:hover{opacity:.85;}
 
-.card-body{padding:24px 24px 20px;display:flex;flex-direction:column;flex:1;}
-.card-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px;}
+/* Acento colorido lateral */
+.tool-card::after{
+  content:'';position:absolute;left:0;top:24px;bottom:24px;
+  width:3px;border-radius:0 3px 3px 0;
+  background:var(--cyan);opacity:0;transition:opacity .3s;
+}
+.tool-card:hover::after{opacity:1;}
+
+.card-body{padding:28px 28px 22px;display:flex;flex-direction:column;flex:1;}
+.card-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:18px;}
+
 .card-icon{
-  width:44px;height:44px;border-radius:12px;
+  width:52px;height:52px;border-radius:14px;
   display:flex;align-items:center;justify-content:center;
-  font-size:20px;flex-shrink:0;
+  font-size:24px;flex-shrink:0;
 }
-.status-badge{
-  font-size:10px;font-weight:700;padding:4px 10px;border-radius:10px;
+
+.badge-active{
+  font-size:10px;font-weight:700;padding:4px 11px;border-radius:10px;
   letter-spacing:.5px;text-transform:uppercase;
+  background:rgba(0,200,150,.15);color:var(--green);border:1px solid rgba(0,200,150,.3);
 }
-.badge-active {background:rgba(0,200,150,.15);color:var(--green);border:1px solid rgba(0,200,150,.3);}
-.badge-dev    {background:rgba(245,158,11,.12);color:var(--amber);border:1px solid rgba(245,158,11,.25);}
-.badge-done   {background:rgba(167,139,250,.12);color:var(--purple);border:1px solid rgba(167,139,250,.25);}
-.badge-soon   {background:rgba(96,180,255,.10);color:#60B4FF;border:1px solid rgba(96,180,255,.25);}
 
-.card-name{font-size:16px;font-weight:700;color:#fff;margin-bottom:6px;line-height:1.3;}
-.card-desc{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:16px;flex:1;}
+.card-name{font-size:18px;font-weight:700;color:#fff;margin-bottom:8px;line-height:1.3;}
+.card-desc{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:20px;flex:1;}
 
-.card-actions{display:flex;gap:8px;flex-wrap:wrap;}
-.btn-primary{
-  display:inline-flex;align-items:center;gap:6px;
+.btn-open{
+  display:inline-flex;align-items:center;gap:8px;
   background:linear-gradient(135deg,var(--cyan),var(--teal));
-  color:#fff;font-size:11px;font-weight:700;
-  padding:8px 16px;border-radius:8px;text-decoration:none;
-  transition:all .2s;border:none;cursor:pointer;font-family:'Inter',sans-serif;
-  letter-spacing:.3px;
+  color:#fff;font-size:12px;font-weight:700;
+  padding:10px 20px;border-radius:10px;text-decoration:none;
+  transition:all .2s;letter-spacing:.3px;align-self:flex-start;
 }
-.btn-primary:hover{box-shadow:0 4px 16px rgba(0,174,239,.4);transform:translateY(-1px);}
-.btn-primary.disabled{
-  background:rgba(255,255,255,.06);color:var(--muted);pointer-events:none;
-  box-shadow:none;transform:none;
+.btn-open:hover{box-shadow:0 6px 20px rgba(0,174,239,.4);transform:translateY(-1px);}
+.btn-open svg{width:14px;height:14px;flex-shrink:0;}
+
+.card-chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:16px;}
+.chip{
+  font-size:10px;color:var(--muted);
+  background:rgba(255,255,255,.05);
+  border:1px solid var(--border);
+  padding:3px 10px;border-radius:6px;
 }
 
-.card-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:14px;}
-.meta-pill{
-  font-size:10px;color:var(--muted);background:rgba(255,255,255,.05);
-  border:1px solid var(--border);padding:3px 9px;border-radius:6px;
-}
-
-/* ── INNER DOCS (dentro do card) ──────────────────────────── */
+/* ── DOCS ── */
 .card-docs{
   border-top:1px solid var(--border);
-  padding:14px 24px 18px;
+  padding:16px 28px 20px;
+  background:rgba(0,0,0,.1);
   display:flex;flex-direction:column;gap:8px;
-  background:rgba(0,0,0,.12);
-  margin-top:auto;
 }
 .card-docs-title{
   font-size:9px;font-weight:700;color:var(--muted);
   text-transform:uppercase;letter-spacing:1.5px;margin-bottom:4px;
 }
-.inner-doc{
+.doc-link{
   display:flex;align-items:center;gap:10px;
-  padding:8px 12px;border-radius:8px;
-  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
+  padding:9px 12px;border-radius:9px;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.07);
   text-decoration:none;color:var(--muted);font-size:11px;font-weight:500;
   transition:all .2s;
 }
-.inner-doc:hover{
-  background:rgba(0,174,239,.10);border-color:rgba(0,174,239,.3);
+.doc-link:hover{
+  background:rgba(0,174,239,.1);
+  border-color:rgba(0,174,239,.3);
   color:var(--cyan);
 }
-.inner-doc-icon{font-size:14px;flex-shrink:0;}
-.inner-doc-label{flex:1;}
-.inner-doc-arrow{font-size:11px;opacity:.5;transition:transform .2s;}
-.inner-doc:hover .inner-doc-arrow{transform:translateX(3px);opacity:1;}
+.doc-link span:last-child{margin-left:auto;opacity:.5;transition:transform .2s;}
+.doc-link:hover span:last-child{transform:translateX(3px);opacity:1;}
 
-/* ── FOOTER ───────────────────────────────────────────────── */
+/* ── FOOTER ── */
 .footer{
   position:relative;z-index:5;
-  margin:0 60px 40px;padding:24px 32px;
-  background:rgba(255,255,255,.03);border:1px solid var(--border);
-  border-radius:16px;display:flex;align-items:center;justify-content:space-between;
+  margin:0 64px 48px;
+  padding:20px 32px;
+  background:rgba(255,255,255,.03);
+  border:1px solid var(--border);
+  border-radius:14px;
+  display:flex;align-items:center;justify-content:space-between;
   font-size:11px;color:var(--muted);
 }
 .footer strong{color:var(--cyan);}
 
-.hidden{display:none!important;}
+@media(max-width:768px){
+  /* Header */
+  .header{padding:18px 20px;flex-wrap:wrap;gap:12px;}
+  .logo-law,.logo-gico{font-size:32px;}
+  .logo-module{font-size:9px;}
+  .header-right{text-align:left;}
+  .firm-name{font-size:12px;}
+  .firm-sub{font-size:10px;}
 
-@media(max-width:900px){
-  .header,.hero,.section,.filter-bar,.footer{padding-left:24px;padding-right:24px;}
-  .hero-title{font-size:32px;}
-  .stats{flex-wrap:wrap;}
-  .footer{flex-direction:column;gap:8px;text-align:center;}
-  .logo-main{font-size:28px;}
+  /* Hero */
+  .hero{padding:40px 20px 32px;}
+  .hero-title{font-size:28px;letter-spacing:-1px;}
+  .hero-desc{font-size:13px;}
+
+  /* Grid */
+  .grid-section{padding:24px 16px 40px;}
+  .cards-grid{grid-template-columns:1fr;}
+
+  /* Cards */
+  .card-body{padding:20px 18px 16px;}
+  .card-docs{padding:14px 18px 16px;}
+  .card-name{font-size:16px;}
+  .btn-open{width:100%;justify-content:center;}
+
+  /* Footer */
+  .footer{margin:0 16px 32px;padding:16px 20px;flex-direction:column;gap:6px;text-align:center;}
 }
 </style>
 </head>
@@ -257,374 +237,139 @@ body::before{
 
 <!-- HEADER -->
 <div class="header">
-  <div class="logo-area">
-    <div class="logo-brand">
-      <div class="logo-wordmark">
-        <span class="logo-law">LAW</span>
-        <div class="logo-gico-wrap">
-          <span class="logo-feat">ferramentas</span>
-          <span class="logo-gico">gico</span>
-        </div>
+  <div>
+    <div class="logo-wordmark">
+      <span class="logo-law">LAW</span>
+      <div class="logo-gico-col">
+        <span class="logo-module">ferramentas</span>
+        <span class="logo-gico">gico</span>
       </div>
-      <div class="logo-tagline">lawyers at work</div>
     </div>
+    <div class="logo-tagline">lawyers at work</div>
   </div>
   <div class="header-right">
     <div class="firm-name">Peixoto &amp; Cury Advogados</div>
     <div class="firm-sub">Controladoria</div>
-    <div class="date-badge" id="date-badge">2026</div>
   </div>
 </div>
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-badge">
-    <span>Central de Inteligência Jurídica</span>
-  </div>
-  <h1 class="hero-title">Tudo que<br/><span>construímos juntos</span></h1>
-  <p class="hero-desc">Plataforma centralizada com todas as ferramentas, sistemas e projetos desenvolvidos pela Controladoria para o escritório.</p>
-
-  <div class="stats">
-    <div class="stat">
-      <div class="stat-num cyan" id="cnt-total">10</div>
-      <div class="stat-lbl">Ferramentas</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num green" id="cnt-active">3</div>
-      <div class="stat-lbl">Ativas</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num amber" id="cnt-dev">3</div>
-      <div class="stat-lbl">Em desenvolvimento</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num blue" id="cnt-soon">4</div>
-      <div class="stat-lbl">Em breve</div>
-    </div>
-  </div>
+  <div class="hero-eyebrow">Sistemas em operação</div>
+  <h1 class="hero-title">Ferramentas <span>disponíveis</span><br/>para o escritório</h1>
+  <p class="hero-desc">Plataformas desenvolvidas internamente pela Controladoria — acesse diretamente pelo navegador, sem instalação.</p>
 </div>
 
-<!-- FILTROS -->
-<div class="filter-bar">
-  <button class="filter-btn active" onclick="filter('all',this)">Todos</button>
-  <button class="filter-btn" onclick="filter('active',this)">Ativas</button>
-  <button class="filter-btn" onclick="filter('dev',this)">Em desenvolvimento</button>
-  <button class="filter-btn" onclick="filter('soon',this)">Em breve</button>
-  <div class="search-wrap">
-    <span class="search-icon">🔍</span>
-    <input class="search-input" id="search" placeholder="Buscar ferramenta..." oninput="doSearch(this.value)"/>
-  </div>
-</div>
-
-<!-- SEÇÃO: FERRAMENTAS -->
-<div class="section">
-  <div class="sec-header">
-    <div class="sec-title">Ferramentas &amp; Sistemas</div>
-    <div class="sec-count" id="tools-count">11 ferramentas</div>
-    <div class="sec-line"></div>
-  </div>
-
-  <div class="cards-grid" id="tools-grid">
-
-    <!-- ─── ATIVAS ─────────────────────────────────── -->
+<!-- CARDS -->
+<div class="grid-section">
+  <div class="cards-grid">
 
     <!-- PAUTA -->
-    <div class="tool-card" data-status="active" data-name="lawgico pauta audiências gestão designações">
+    <div class="tool-card">
       <div class="card-body">
         <div class="card-top">
           <div class="card-icon" style="background:rgba(0,174,239,.15);">🎯</div>
-          <span class="status-badge badge-active">Ativa</span>
+          <span class="badge-active">Ativo</span>
         </div>
         <div class="card-name">LAWgico Pauta</div>
         <div class="card-desc">Sistema completo de gestão de audiências e designações. Controle de conflitos, histórico de alterações, pós-audiência e painel administrativo com 3 perfis de acesso.</div>
-        <div class="card-actions">
-          <a class="btn-primary" href="https://peixotoecury.github.io/pauta-audiencias/" target="_blank">▶ Abrir sistema</a>
-        </div>
-        <div class="card-meta">
-          <span class="meta-pill">📋 Audiências</span>
-          <span class="meta-pill">⚠️ Conflitos</span>
-          <span class="meta-pill">👤 3 Perfis</span>
-          <span class="meta-pill">📤 Excel</span>
+        <a class="btn-open" href="https://peixotoecury.github.io/pauta-audiencias/" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="12" r="5"/><path d="M15.5 7.5 19 4l.5.5L18 6l1.5 1.5-.5.5L17.5 6.5 16 8z"/><path d="M15 12h7"/></svg>
+          Abrir sistema
+        </a>
+        <div class="card-chips">
+          <span class="chip">📋 Audiências</span>
+          <span class="chip">⚠️ Conflitos</span>
+          <span class="chip">👤 3 Perfis</span>
+          <span class="chip">📤 Excel</span>
         </div>
       </div>
       <div class="card-docs">
         <div class="card-docs-title">Materiais</div>
-        <a class="inner-doc" href="Pauta/LAWgico_Pauta_Infografico.html" target="_blank">
-          <span class="inner-doc-icon">🌐</span>
-          <span class="inner-doc-label">Infográfico interativo</span>
-          <span class="inner-doc-arrow">→</span>
+        <a class="doc-link" href="https://peixotoecury.github.io/lawgico-hub/Pauta/LAWgico_Pauta_Infografico.html" target="_blank">
+          <span>🌐</span><span style="flex:1">Infográfico interativo</span><span>→</span>
         </a>
-        <a class="inner-doc" href="Pauta/LAWgico_Pauta_Apresentacao.pptx">
-          <span class="inner-doc-icon">📎</span>
-          <span class="inner-doc-label">Apresentação PowerPoint</span>
-          <span class="inner-doc-arrow">→</span>
+        <a class="doc-link" href="https://peixotoecury.github.io/lawgico-hub/Pauta/LAWgico_Pauta_Guia.pdf" target="_blank">
+          <span>📖</span><span style="flex:1">Guia do usuário (PDF)</span><span>→</span>
         </a>
-      </div>
-    </div>
-
-    <!-- DASHBOARD GERENCIAL -->
-    <div class="tool-card" data-status="dev" data-name="dashboard gerencial processos trabalhistas grupos profissionais fluxo histórico">
-      <div class="card-body">
-        <div class="card-top">
-          <div class="card-icon" style="background:rgba(245,158,11,.12);">📊</div>
-          <span class="status-badge badge-dev">Em desenvolvimento</span>
-        </div>
-        <div class="card-name">Dashboard Gerencial</div>
-        <div class="card-desc">Visão completa da carteira de processos do escritório. 6 módulos: em andamento, por grupo, profissionais, fluxo anual, histórico (75k processos) e sócios.</div>
-        <div class="card-actions">
-          <a class="btn-primary" href="https://peixotoecury.github.io/gerencial/" target="_blank">▶ Abrir sistema</a>
-        </div>
-        <div class="card-meta">
-          <span class="meta-pill">📈 8.217 proc. ativos</span>
-          <span class="meta-pill">📚 Desde 1994</span>
-          <span class="meta-pill">👥 Sócios</span>
-        </div>
-      </div>
-      <div class="card-docs">
-        <div class="card-docs-title">Materiais</div>
-        <a class="inner-doc" href="Visão Geral dos processos do escritório/Dashboard_Gerencial_Infografico.html" target="_blank">
-          <span class="inner-doc-icon">🌐</span>
-          <span class="inner-doc-label">Infográfico interativo</span>
-          <span class="inner-doc-arrow">→</span>
-        </a>
-        <a class="inner-doc" href="Visão Geral dos processos do escritório/Dashboard_Gerencial_Apresentacao.pptx">
-          <span class="inner-doc-icon">📎</span>
-          <span class="inner-doc-label">Apresentação PowerPoint</span>
-          <span class="inner-doc-arrow">→</span>
+        <a class="doc-link" href="https://peixotoecury.github.io/lawgico-hub/Pauta/LAWgico_Pauta_Apresentacao.pptx">
+          <span>📎</span><span style="flex:1">Apresentação PowerPoint</span><span>→</span>
         </a>
       </div>
     </div>
 
-    <!-- BAIXADOS -->
-    <div class="tool-card" data-status="active" data-name="baixados baixas prazos análise semanal fatal antecipado">
+    <!-- BAIXAS DE PRAZOS -->
+    <div class="tool-card">
       <div class="card-body">
         <div class="card-top">
           <div class="card-icon" style="background:rgba(248,113,113,.12);">📉</div>
-          <span class="status-badge badge-active">Ativa</span>
+          <span class="badge-active">Ativo</span>
         </div>
-        <div class="card-name">Baixas de Prazos</div>
-        <div class="card-desc">Análise semanal de baixas de prazos da área trabalhista. Indicadores de fatais, antecipados e fora de horário por responsável e grupo, com importação de Excel.</div>
-        <div class="card-actions">
-          <a class="btn-primary" href="https://peixotoecury.github.io/prazosbaixados/" target="_blank">▶ Abrir sistema</a>
-        </div>
-        <div class="card-meta">
-          <span class="meta-pill">📊 Semanal</span>
-          <span class="meta-pill">🔥 Fatais</span>
-          <span class="meta-pill">✅ Antecipados</span>
-          <span class="meta-pill">📥 Excel</span>
+        <div class="card-name">Protocolados</div>
+        <div class="card-desc">Gestão de protocolados do escritório com indicadores gerenciais, filtros por responsável e grupo, e importação de planilha Excel.</div>
+        <a class="btn-open" href="https://peixotoecury.github.io/prazosbaixados/" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="12" r="5"/><path d="M15.5 7.5 19 4l.5.5L18 6l1.5 1.5-.5.5L17.5 6.5 16 8z"/><path d="M15 12h7"/></svg>
+          Abrir sistema
+        </a>
+        <div class="card-chips">
+          <span class="chip">📊 Semanal</span>
+          <span class="chip">🔥 Fatais</span>
+          <span class="chip">✅ Antecipados</span>
+          <span class="chip">📥 Excel</span>
         </div>
       </div>
       <div class="card-docs">
         <div class="card-docs-title">Materiais</div>
-        <a class="inner-doc" href="Manual_Baixados.html" target="_blank">
-          <span class="inner-doc-icon">📖</span>
-          <span class="inner-doc-label">Manual do usuário</span>
-          <span class="inner-doc-arrow">→</span>
+        <a class="doc-link" href="https://peixotoecury.github.io/lawgico-hub/Manual_Baixados.html" target="_blank">
+          <span>📖</span><span style="flex:1">Manual do usuário</span><span>→</span>
         </a>
       </div>
     </div>
 
-    <!-- ─── EM DESENVOLVIMENTO ─────────────────────── -->
-
-    <!-- CÁLCULOS TRABALHISTAS IA -->
-    <div class="tool-card" data-status="dev" data-name="cálculos trabalhistas ia inteligência artificial memória técnica">
-      <div class="card-body">
-        <div class="card-top">
-          <div class="card-icon" style="background:rgba(0,200,150,.12);">🧮</div>
-          <span class="status-badge badge-dev">Em desenvolvimento</span>
-        </div>
-        <div class="card-name">Cálculos Trabalhistas IA</div>
-        <div class="card-desc">Módulo de cálculos trabalhistas com inteligência artificial. Automatiza memórias técnicas, divergências de cálculo e análise de planilhas com precisão.</div>
-        <div class="card-actions">
-          <a class="btn-primary" href="https://peixotoecury.github.io/modulodevalores/" target="_blank">▶ Abrir sistema</a>
-        </div>
-        <div class="card-meta">
-          <span class="meta-pill">🤖 IA</span>
-          <span class="meta-pill">🧾 Memória técnica</span>
-          <span class="meta-pill">⚡ Automação</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- CONTROLE DE PRAZOS -->
-    <div class="tool-card" data-status="active" data-name="controle prazos agendas sócios base diária atualização">
+    <!-- CONTROLE DE PRAZOS E AGENDAS -->
+    <div class="tool-card">
       <div class="card-body">
         <div class="card-top">
           <div class="card-icon" style="background:rgba(0,169,224,.12);">📅</div>
-          <span class="status-badge badge-active">Ativo</span>
+          <span class="badge-active">Ativo</span>
         </div>
         <div class="card-name">Controle de Prazos e Agendas</div>
         <div class="card-desc">Base diária de atualização para sócios — controle de prazos processuais e agendas da Controladoria com acesso seguro por perfil de usuário.</div>
-        <div class="card-actions">
-          <a class="btn-primary" href="https://peixotoecury.github.io/dashboard-juridico/" target="_blank">▶ Abrir sistema</a>
+        <a class="btn-open" href="https://peixotoecury.github.io/dashboard-juridico/" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="12" r="5"/><path d="M15.5 7.5 19 4l.5.5L18 6l1.5 1.5-.5.5L17.5 6.5 16 8z"/><path d="M15 12h7"/></svg>
+          Abrir sistema
+        </a>
+        <div class="card-chips">
+          <span class="chip">🔔 Prazos</span>
+          <span class="chip">📆 Agendas</span>
+          <span class="chip">🔐 Login</span>
         </div>
-        <div class="card-meta">
-          <span class="meta-pill">🔔 Prazos</span>
-          <span class="meta-pill">📆 Agendas</span>
-          <span class="meta-pill">🔐 Login</span>
-        </div>
+      </div>
+      <div class="card-docs">
+        <div class="card-docs-title">Materiais</div>
+        <a class="doc-link" href="https://peixotoecury.github.io/lawgico-hub/PrazosAgendas/LAWgico_PrazosAgendas_Infografico.html" target="_blank">
+          <span>🌐</span><span style="flex:1">Infográfico interativo</span><span>→</span>
+        </a>
+        <a class="doc-link" href="https://peixotoecury.github.io/lawgico-hub/PrazosAgendas/LAWgico_PrazosAgendas_Guia.pdf" target="_blank">
+          <span>📖</span><span style="flex:1">Guia do usuário (PDF)</span><span>→</span>
+        </a>
+        <a class="doc-link" href="https://peixotoecury.github.io/lawgico-hub/PrazosAgendas/LAWgico_PrazosAgendas_Apresentacao.pptx">
+          <span>📎</span><span style="flex:1">Apresentação PowerPoint</span><span>→</span>
+        </a>
       </div>
     </div>
 
-    <!-- MÓDULO DE CADASTRO -->
-    <div class="tool-card" data-status="dev" data-name="módulo cadastro lawgico base dados consulta">
-      <div class="card-body">
-        <div class="card-top">
-          <div class="card-icon" style="background:rgba(0,174,239,.10);">🗂️</div>
-          <span class="status-badge badge-dev">Em desenvolvimento</span>
-        </div>
-        <div class="card-name">Módulo de Cadastro</div>
-        <div class="card-desc">Sistema LAWgico de cadastro centralizado — base de dados e gestão de informações processuais e cadastrais do escritório com consulta rápida.</div>
-        <div class="card-actions">
-          <a class="btn-primary" href="https://peixotoecury.github.io/modulocadastrolawgico/" target="_blank">▶ Abrir sistema</a>
-        </div>
-        <div class="card-meta">
-          <span class="meta-pill">🗃️ Cadastros</span>
-          <span class="meta-pill">🔍 Consulta</span>
-          <span class="meta-pill">📋 Base dados</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- ─── EM BREVE ────────────────────────────────── -->
-
-    <!-- GERADOR DE RELATÓRIOS -->
-    <div class="tool-card soon-card" data-status="soon" data-name="relatórios automáticos gerador exportação">
-      <div class="card-body">
-        <div class="card-top">
-          <div class="card-icon" style="background:rgba(96,180,255,.08);">📄</div>
-          <span class="status-badge badge-soon">Em breve</span>
-        </div>
-        <div class="card-name" style="color:var(--muted);">Gerador de Relatórios</div>
-        <div class="card-desc">Módulo para geração automática de relatórios periódicos consolidados — mensal, semanal e por demanda — com exportação em PDF e Excel.</div>
-        <div class="card-actions">
-          <span class="btn-primary disabled">🔜 Em breve</span>
-        </div>
-        <div class="card-meta">
-          <span class="meta-pill">📊 Relatórios</span>
-          <span class="meta-pill">📅 Periódico</span>
-          <span class="meta-pill">📤 Exportação</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- MÓDULO DE HONORÁRIOS -->
-    <div class="tool-card soon-card" data-status="soon" data-name="honorários controle financeiro custas">
-      <div class="card-body">
-        <div class="card-top">
-          <div class="card-icon" style="background:rgba(96,180,255,.08);">💼</div>
-          <span class="status-badge badge-soon">Em breve</span>
-        </div>
-        <div class="card-name" style="color:var(--muted);">Módulo de Honorários</div>
-        <div class="card-desc">Controle e acompanhamento de honorários advocatícios, custas processuais e depósitos recursais por processo, grupo e cliente.</div>
-        <div class="card-actions">
-          <span class="btn-primary disabled">🔜 Em breve</span>
-        </div>
-        <div class="card-meta">
-          <span class="meta-pill">💰 Honorários</span>
-          <span class="meta-pill">📋 Custas</span>
-          <span class="meta-pill">📊 Controle</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- PEÇAS E MINUTAS IA -->
-    <div class="tool-card soon-card" data-status="soon" data-name="peças minutas ia inteligência artificial documentos jurídicos">
-      <div class="card-body">
-        <div class="card-top">
-          <div class="card-icon" style="background:rgba(96,180,255,.08);">✍️</div>
-          <span class="status-badge badge-soon">Em breve</span>
-        </div>
-        <div class="card-name" style="color:var(--muted);">Desenvolvedor de Peças e Minutas IA</div>
-        <div class="card-desc">Geração automatizada de peças processuais e minutas com inteligência artificial — recursos, contestações, acordos e documentos jurídicos a partir de modelos internos.</div>
-        <div class="card-actions">
-          <span class="btn-primary disabled">🔜 Em breve</span>
-        </div>
-        <div class="card-meta">
-          <span class="meta-pill">🤖 IA</span>
-          <span class="meta-pill">📝 Minutas</span>
-          <span class="meta-pill">⚖️ Peças</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- ANÁLISE IA -->
-    <div class="tool-card soon-card" data-status="soon" data-name="análise sentenças ia inteligência artificial jurisprudência">
-      <div class="card-body">
-        <div class="card-top">
-          <div class="card-icon" style="background:rgba(96,180,255,.08);">🤖</div>
-          <span class="status-badge badge-soon">Em breve</span>
-        </div>
-        <div class="card-name" style="color:var(--muted);">Análise de Sentenças IA</div>
-        <div class="card-desc">Módulo de análise automatizada de sentenças e acórdãos com inteligência artificial — identificação de padrões, tendências e jurisprudência relevante.</div>
-        <div class="card-actions">
-          <span class="btn-primary disabled">🔜 Em breve</span>
-        </div>
-        <div class="card-meta">
-          <span class="meta-pill">🤖 IA</span>
-          <span class="meta-pill">📜 Sentenças</span>
-          <span class="meta-pill">🔍 Jurisprudência</span>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- /cards-grid -->
-</div><!-- /section -->
+  </div>
+</div>
 
 <!-- FOOTER -->
 <div class="footer">
   <div>Peixoto &amp; Cury Advogados &nbsp;·&nbsp; <strong>Controladoria</strong> &nbsp;·&nbsp; Desenvolvido internamente</div>
-  <div>LAWgico Ferramentas &nbsp;·&nbsp; <strong id="footer-date">2026</strong></div>
+  <div>LAWgico &nbsp;·&nbsp; <strong id="footer-year">2026</strong></div>
 </div>
 
 <script>
-const now = new Date();
-const label = now.toLocaleDateString('pt-BR',{month:'long',year:'numeric'});
-document.getElementById('date-badge').textContent = label.charAt(0).toUpperCase()+label.slice(1);
-document.getElementById('footer-date').textContent = now.getFullYear();
-
-function filter(status, btn) {
-  document.querySelectorAll('.filter-btn').forEach(b=>{
-    b.classList.remove('active','active-soon');
-  });
-  if(status === 'soon') btn.classList.add('active-soon');
-  else btn.classList.add('active');
-
-  document.querySelectorAll('.tool-card').forEach(card => {
-    const match = status === 'all' || card.dataset.status === status;
-    card.style.display = match ? '' : 'none';
-  });
-  updateCount();
-}
-
-function doSearch(val) {
-  const q = val.toLowerCase().trim();
-  document.querySelectorAll('.tool-card').forEach(card => {
-    const name = (card.dataset.name||'').toLowerCase();
-    card.style.display = (!q || name.includes(q)) ? '' : 'none';
-  });
-  updateCount();
-}
-
-function updateCount() {
-  const visible = document.querySelectorAll('.tool-card:not([style*="none"])').length;
-  document.getElementById('tools-count').textContent = visible + ' ferramenta' + (visible===1?'':'s');
-}
-
-function animateCount(el, target) {
-  let n = 0; const step = Math.ceil(target/20);
-  const t = setInterval(() => {
-    n = Math.min(n+step, target);
-    el.textContent = n;
-    if (n >= target) clearInterval(t);
-  }, 50);
-}
-window.addEventListener('load', () => {
-  animateCount(document.getElementById('cnt-total'), 10);
-  animateCount(document.getElementById('cnt-active'), 3);
-  animateCount(document.getElementById('cnt-dev'), 3);
-  animateCount(document.getElementById('cnt-soon'), 4);
-});
+document.getElementById('footer-year').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
